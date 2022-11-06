@@ -35,7 +35,7 @@ let wib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
     })
     
 //==============> Menu nya
-let intro = `*BOT* *BUILD-OPERATOR-TRANSFER* ADALAH PROGRAM KOMPUTER YANG DIJALANKAN DI WHATSAPP YANG KHUSUS DIBUAT UNTUK MELAKUKAN PEKERJAAN-PEKERJAAN OTOMATIS, BOT WHATSAPP DIRANCANG SEDEMIKIAN RUPA SEHINGGA DAPAT DIGUNAKAN DENGAN NYAMAN, DAN  KEMUNGKINAN MEMILIKI SEDIKIT BUG, ADANYA FITUR DARI BOT WHATSAPP INI TENTU AKAN MEMBANTU ANDA UNTUK BERSENANG SENANG`
+let intro = `⚠️ *Note:* Bot masih dalam pengembangan, jika menemukan bug/fitur error harap dimaklumi\n\n➣ https://vamsesofficial.github.io/web/`
 conn.send3ButtonDoc(m.chat, `\n\n     *『 ɪ ɴ ᴛ ʀ ᴏ ᴄ ᴀ ᴅ ᴜ ᴛ ɪ ᴏ ɴ 』*\n\n`, intro + `\n\n${tag}\n\n`, 'ALL MENU', '.? all', 'LIST MENU', '.tesm', '\nAKU PEDO YGY', 'bilek', m, { contextInfo: { forwardingScore: fsizedoc, externalAdReply: { body: 'Tes', containsAutoReply: true, mediaType: 1, mediaUrl: hwaifu.getRandom(),  renderLargerThumbnail: true, showAdAttribution: true, sourceId: 'Tes', sourceType: 'PDF', previewType: 'PDF', sourceUrl: sgc, thumbnail: fs.readFileSync('./thumbnail.jpg'), thumbnailUrl: sgc, title: 'ɪ ɴ ᴛ ʀ ᴏ ᴄ ᴀ ᴅ ᴜ ᴛ ɪ ᴏ ɴ'}}})
     } 
     

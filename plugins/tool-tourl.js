@@ -17,4 +17,5 @@ handler.help = ['upload (reply media)', 'tourl (reply media)']
 handler.tags = ['tools']
 handler.command = /^(tourl|upload)$/i
 handler.limit = true
+handler.private = true
 export default handler

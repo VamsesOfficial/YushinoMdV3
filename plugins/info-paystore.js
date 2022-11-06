@@ -30,11 +30,9 @@ let info = `
 ╰═┅═━––––––๑
 
 *⫹⫺ PAYMENT:*
-• *Pulsa Telkomsel:* [${ppulsa}]
+• *Pulsa Indosat:* [${ppulsa}]
 • *Dana:* [${pdana}]
-• *Gopay:* [${pgopay}]
 • *Ovo:* [${povo}]
-• *Link Aja:* [${plinkaja}]
 
 –––––– *🐾 Kebijakan* ––––––
 🗣️: Kak, Kok harganya mahal banget?

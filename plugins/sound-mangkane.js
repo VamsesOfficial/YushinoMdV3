@@ -17,7 +17,7 @@ let stiker = await sticker(null, global.API(`https://telegra.ph/file/d34b2ab2cb2
           showAdAttribution: true,
     mediaUrl: sgc,
     mediaType: 2,
-    description: '𝑨𝒍𝒅𝒊 𝑿 𝑨𝒊𝒔𝒚𝒂𝒉', 
+    description: 'VamsesOfficial', 
     title: `${command} Sedang Di Proses`,
     body: botdate,
     thumbnail: await(await fetch(pp)).buffer(),
@@ -33,15 +33,15 @@ ptt: false, seconds: 0,contextInfo: {
          externalAdReply: { showAdAttribution: true,
  mediaUrl: 'www.instagram.com/hyuura-official',
     mediaType: 2, 
-    description: 'www.instagram.com/hyuura-official',
+    description: 'www.instagram.com/ketutagus404',
     title: "Now Playing...",
     body: wm,
-    thumbnail: await (await fetch('https://telegra.ph/file/c72133b197a68d3ea514d.jpg')).buffer(),
-    sourceUrl: 'www.instagram.com/hyuura-official'
+    thumbnail: await (await fetch('https://telegra.ph/file/afa462cd7df5087515f90.jpg')).buffer(),
+    sourceUrl: 'www.instagram.com/ketutagus404'
  	  /*   sourceUrl: sig,
            title: '◄⟬ ●━━━ ⧏ ⧎ ⧐ ━━━● ⟭►',  
             body: 'Now Playing...', 
-           thumbnail: await (await fetch('https://telegra.ph/file/c72133b197a68d3ea514d.jpg')).buffer()*/
+           thumbnail: await (await fetch('https://telegra.ph/file/afa462cd7df5087515f90.jpg')).buffer()*/
 }
      }
     })

@@ -23,7 +23,7 @@ let stiker = await sticker(null, global.API(`https://telegra.ph/file/d34b2ab2cb2
     sourceUrl: sgc
      }}
   })
-  }
+
 handler.command = /^(iya)$/i
 
 export default handler

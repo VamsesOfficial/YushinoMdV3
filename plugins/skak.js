@@ -10,21 +10,20 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
 
-let stiker = await sticker(null, global.API(`https://telegra.ph/file/d34b2ab2cb233c749776c.png`), global.packname, global.author)
+let stiker = await sticker(null, global.API(`https://telegra.ph/file/51a13c9a2b8830413a312.jpg`), global.packname, global.author)
  conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, null, { fileLength: 100, contextInfo: {
           externalAdReply :{
           showAdAttribution: true,
     mediaUrl: sgc,
     mediaType: 2,
-    description: 'Slebew', 
-    title: `${command} Sedang Di Proses`,
+    description: 'VamsesOfficial', 
+    title: `${command} Sama Sama Sayang😘`,
     body: botdate,
     thumbnail: await(await fetch(pp)).buffer(),
     sourceUrl: sgc
      }}
   })
-}
-
+  }
 handler.command = /^(iya)$/i
 
 export default handler

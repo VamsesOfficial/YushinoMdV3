@@ -411,48 +411,113 @@ readmore: readMore
 text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
 
 //----------------- FAKE
-let ftoko = {
-key: {
-fromMe: false,
-participant: `${m.sender.split`@`[0]}` + '@s.whatsapp.net',
-remoteJid: 'status@broadcast',
-},
-message: {
-"productMessage": {
-"product": {
-"productImage":{
-"mimetype": "image/jpeg",
-"jpegThumbnail": fs.readFileSync('./thumbnail.jpg'),
-},
-"title": `${ucapan()}`,
-"description": '𝗧 𝗜 𝗠 𝗘 : ' + wktuwib,
-"currencyCode": "US",
-"priceAmount1000": "100",
-"retailerId": wm,
-"productImageCount": 999
-},
-"businessOwnerJid": `${m.sender.split`@`[0]}@s.whatsapp.net`
-}
-}
-}
-let fgif = {
-key: {
-remoteJid: 'status@broadcast',
-participant : '0@s.whatsapp.net'},
-message: { 
-"videoMessage": { 
-"title": wm,
-"h": `Nekohime`,
-'duration': '99999999', 
-'gifPlayback': 'true', 
-'caption': bottime,
-'jpegThumbnail': thumb
- }
-}
- }
-let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
+let fvn = {quoted: { key: {participant : '0@s.whatsapp.net'},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds": "2022","ptt": "true"} } }}
+ let floc = {quoted: { key: { participant : '0@s.whatsapp.net'}, message: { "liveLocationMessage": { "caption": `Menu`,"h": `${name}`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}} }}
+ let fdocs = {quoted: { key : { participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `Hai Kak ${name}!`,  jpegThumbnail: fs.readFileSync('./thumbnail.jpg') }}}}
+ let fgclink = {quoted: {key: {participant : '0@s.whatsapp.net'},message: {groupInviteMessage: {groupJid: "17608914335-1625305606@g.us",inviteCode: null,groupName: `Hai ${name}!`,  caption: wm,  jpegThumbnail: fs.readFileSync('./thumbnail.jpg') }} }}
+ let fgif = {quoted: {key: { participant : '0@s.whatsapp.net'}, message: {  "videoMessage": {  "title": `Hai Kak ${name}!`, "h": `Hmm`, 'seconds': '999999999',  'gifPlayback': 'true',  'caption': wm, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg') } } } }
+ let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
+ 
+    let ftoko = {
+    key: {
+    fromMe: false,
+    participant: `${m.sender.split`@`[0]}` + '@s.whatsapp.net',
+    remoteJid: 'status@broadcast',
+  },
+  message: {
+  "productMessage": {
+  "product": {
+  "productImage":{
+  "mimetype": "image/jpeg",
+  "jpegThumbnail": fs.readFileSync('./thumbnail.jpg'),
+    },
+  "title": `${ucapan()}`,
+  "description": '𝗧 𝗜 𝗠 𝗘 : ' + wktuwib,
+  "currencyCode": "US",
+  "priceAmount1000": "100",
+  "retailerId": wm,
+  "productImageCount": 999
+        },
+  "businessOwnerJid": `${m.sender.split`@`[0]}@s.whatsapp.net`
+  }
+  }
+  }
+  
+    let urls = pickRandom(['https://telegra.ph/file/035e524939ab0294ba91f.jpg', 'https://telegra.ph/file/96b2275d3b14d071290bc.jpg', 'https://telegra.ph/file/2c6b7660bc6126404a9bb.jpg', 'https://telegra.ph/file/c635bf577bb9d59a3e00b.jpg', 'https://telegra.ph/file/be8dd52f6363f9e9f5a60.jpg', 'https://telegra.ph/file/02e53361b9dc946f63c8d.jpg', 'https://telegra.ph/file/298ed2f1bba17aeb64ca8.jpg', 'https://telegra.ph/file/be2a18221974147f66ea0.jpg'])
+  
+    const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
+    
+    //FAKE TROLI
 
-const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
+    const ftrol = {
+
+    key : {
+
+    remoteJid: 'status@broadcast',
+
+    participant : '0@s.whatsapp.net'
+
+    },
+
+    message: {
+
+    orderMessage: {
+
+    itemCount : 2022,
+
+    status: 1,
+
+    surface : 1,
+
+    message: `Hai Kak ${name}!`, 
+
+    orderTitle: `▮Menu ▸`,
+
+    thumbnail: await (await fetch(fla + 'Menu')).buffer(), //Gambarnye
+
+    sellerJid: '0@s.whatsapp.net' 
+
+    }
+
+    }
+
+    }
+    
+    const fload = {
+
+    key : {
+
+    remoteJid: 'status@broadcast',
+
+    participant : '0@s.whatsapp.net'
+
+    },
+
+    message: {
+
+    orderMessage: {
+
+    itemCount : 2022,
+
+    status: 1,
+
+    surface : 1,
+
+    message: '[❗] Memuat Menu ' + teks + '...\n Sabar Ya Kak ^ω^', 
+
+    orderTitle: `▮Menu ▸`,
+
+    thumbnail: await (await fetch(fla + 'Loading')).buffer(), //Gambarnye
+
+    sellerJid: '0@s.whatsapp.net' 
+
+    }
+
+    }
+
+    }
+
+    conn.reply(m.chat, '*Tunggu Sebentar Kak. . .*', ftrol) 
 
 //------------------< MENU >----------------
 let mangkane25 = "mangkane25"
@@ -530,7 +595,16 @@ let td = `${pickRandom([d1,d2,d3,d4,d5])}`
 let ᴛᴇs = `Pᴏᴡᴇʀ Bʏ ⬝ @${nomorwa.split`@`[0]}\nCʀᴇᴀᴛᴏʀ Bᴏᴛ ⬝ @${nomorown1.split`@`[0]}\n⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 let thummb = fs.readFileSync('./thumbnail.jpg')
 
-conn.send2ButtonDoc(m.chat, almenu, readMore + text + `${ᴛᴇs}` + readMore, 'SᴇᴡᴀBᴏᴛ', '.sewa', 'Oᴡɴᴇʀ', '.owner', m, { contextInfo: { forwardingScore: fsizedoc, externalAdReply: { body: 'Tes', containsAutoReply: true, mediaType: 1, mediaUrl: hwaifu.getRandom(),  renderLargerThumbnail: true, showAdAttribution: true, sourceId: 'Tes', sourceType: 'PDF', previewType: 'PDF', sourceUrl: sgc, thumbnail: fs.readFileSync('./thumbnail.jpg'), thumbnailUrl: sgc, title: 'Jᴏɪɴ Mʏ Gᴄ Oғғɪᴄɪᴀʟ'}}})
+conn.send3ButtonVid(m.chat, 'https://telegra.ph/file/e5053ab5d52276a9b9769.mp4', '┅────┅─❏ *𝐃𝐀𝐒𝐇𝐁𝐎𝐀𝐑𝐃* ❏─┅────┅', text.trim() + `\nᴍᴀᴅᴇ ᴡɪᴛʜ ʙʏ Vamses\n` + botdate, 'Menu', '.menu', 'Owner', '.owner', 'Credit', '.credit', m, { contextInfo: { externalAdReply: { showAdAttribution: true,
+    mediaUrl: sig,
+    mediaType: 2, 
+    description: sgc,
+    title: "Follow Lah Cᴜʏ!!!",
+    body: wm,
+    thumbnail: await (await fetch(pp)).buffer(),
+    sourceUrl: sig,
+     }}
+  })
     
 //------------------- BUTTON VID
 /*conn.sendButton(m.chat, text, wm, 'https://youtu.be/3ONnszQtwz0', [['Ping', '.speed'],['Owner', '.owner'],['Donasi', '.donasi']],ftoko, { gifPlayback: true, contextInfo: { externalAdReply: {title: namebot, body: bottime, sourceUrl: sig, thumbnail: fs.readFileSync('./thumbnail.jpg') }}})*/

@@ -41,7 +41,7 @@ let time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
   let wann = "https://i.ibb.co/7kSnyh8/IMG-20221111-104556.jpg"
   let cap = `
 ❍⃕  「 ${name} 」
-❍⃕  *I N F O - B O T*\n\n${emot} Sistem otomatis (WhatsApp Bot) yang dapat membantu untuk melakukan sesuatu, mencari dan mendapatkan data/informasi hanya melalui WhatsApp.\n\n❍⃕   *N O T E* \n\n${emot} Gunakan bot di private message agar bot merespon dengan cepat, \n\n${emot} Beri jeda yah agar terhindar dari banned😇\n\n*📮 *Note:* _Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada Owner dengan cara ketik .report banh tik tok audio error_
+❍⃕  *I N F O - B O T*\n\n${emot} Sistem otomatis (WhatsApp Bot) yang dapat membantu untuk melakukan sesuatu, mencari dan mendapatkan data/informasi hanya melalui WhatsApp.\n\n❍⃕   *N O T E* \n\n${emot} Gunakan bot di private message agar bot merespon dengan cepat, \n\n${emot} Beri jeda yah agar terhindar dari banned😇\n\n*⚠️ *Note:* Bot masih dalam pengembangan, jika menemukan bug/fitur error harap dimaklumi\n\n➣ https://vamsesofficial.github.io/web/',
   `
 let fpayment = {
   "key": {
@@ -57,7 +57,7 @@ let fpayment = {
       "requestFrom": "0@s.whatsapp.net",
       "noteMessage": {
         "extendedTextMessage": {
-          "text": "Jaya-Botz"
+          "text": "VamsesOfficial"
         }
       },
       "expiryTimestamp": fsizedoc,
@@ -75,7 +75,7 @@ let fliveLoc = {
             message: { "liveLocationMessage": { "caption": wm,"h": `${bottime}`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
            }
                
-let info = fs.readFileSync('./mp3/desah.opus')
+let info = fs.readFileSync('./mp3/sad.opus')
 let fliveLoc22 = {
             key: {
             participant : '0@s.whatsapp.net'},
@@ -94,13 +94,13 @@ await conn.send2ButtonDoc(m.chat, cap, botdate, 'ALL MENU', '.? all', 'LIST MENU
     mediaUrl: hwaifu.getRandom(), 
     renderLargerThumbnail: true,
     showAdAttribution: false,
-    sourceId: '© Jaya-Botz ',
+    sourceId: '© 𝐕𝐚𝐦𝐚𝐞𝐬𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 ',
     sourceType: 'PDF',
     previewType: 'PDF',
     sourceUrl: sgc,
     thumbnail: await(await fetch(wann)).buffer(),
     thumbnailUrl: sgc,
-    title: 'Jaya-Botz',
+    title: '𝐕𝐚𝐦𝐬𝐞𝐬𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥',
 				}
 			}
 })
@@ -110,7 +110,7 @@ await conn.reply(m.chat, info, fvn, { contextInfo: { externalAdReply: { showAdAt
     description: syt,
     title: `Jangan Diplay ${name}!!!`,
     body: `⚠️ 𝐃𝐀𝐍𝐆𝐄𝐑 ⚠️`,
-    thumbnail: await(await fetch("https://telegra.ph/file/c080917609684bf229cd3.jpg")).buffer(),
+    thumbnail: await(await fetch("https://telegra.ph/file/adeac0c422e4e51acf10f.jpg")).buffer(),
     sourceUrl: syt
   }
   } }) 

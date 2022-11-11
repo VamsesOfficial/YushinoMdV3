@@ -54,6 +54,7 @@ global.nomorwa = '0'
 //⫹⫺ ╳╶╼╶╶╶╶┈ ⎝ WM ⎞ ┈╴╴╴╴╾╴╳ ⫹⫺
 
 global.readMore = readMore
+global.gcname = '𝐕𝐚𝐦𝐬𝐞𝐬𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥'
 global.author = 'Created By Vamses'
 global.namebot = '𝐂𝐡𝐨𝐧𝐢𝐱-𝐁𝐨𝐭'
 global.wm = '© 𝘾𝙧𝙚𝙖𝙩𝙚𝙙 𝘽𝙮 𝙑𝙖𝙢𝙨𝙚𝙨'

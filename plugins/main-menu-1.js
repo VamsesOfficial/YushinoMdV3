@@ -1,56 +1,133 @@
-import moment from 'moment-timezone'
-import fs from 'fs'
 import fetch from 'node-fetch'
-  import jimp from 'jimp'
-import PhoneNumber from 'awesome-phonenumber'
-let { MessageType } = (await import('@adiwajshing/baileys')).default
+import fs from 'fs'
+import { promises, readFileSync } from 'fs'
+import { join } from 'path'
+import { xpRange } from '../lib/levelling.js'
+import moment from 'moment-timezone'
 
-let handler = async (m, { conn, usedPrefix: _p, __dirname, text, command }) => {
-let tag = `@${m.sender.replace(/@.+/, '')}`
-  let mentionedJid = [m.sender]
-let ucpn = `${ucapan()}`
-let name = conn.getName(m.sender)
+let handler = async(m, { conn, groupMetadata, usedPrefix, text, args, command }) => {
+let date = moment.tz('Asia/Jakarta').format("dddd, Do MMMM, YYYY")
+let time = moment.tz('Asia/Jakarta').format('HH:mm:ss') 
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+    let { exp, limit, level, role, money, lastclaim, lastweekly, registered, regTime, age, banned, pasangan } = global.db.data.users[who]
+    let { min, xp, max } = xpRange(level, global.multiplier)
+    let pp = hwaifu.getRandom()
+    let name = await conn.getName(who)
+    let ucpn = `${ucapan()}`
+    let emot = `${pickRandom(['⎔', '◈▻', '✦', 'ᯬ', '⭔', '◉', '⬟', '᭻', '〆', '々', '⛥', '✗',])}`
+    let users = Object.entries(global.db.data.users).filter(user => user[1].banned)
+    
+    let totalf = Object.values(plugins).filter(v => v.help && !v.disabled).map(v => v.help).flat(1)
+        if (typeof global.db.data.users[who] == "undefined") {
+      global.db.data.users[who] = {
+        exp: 0,
+        limit: 10,
+        lastclaim: 0,
+        registered: false,
+        name: conn.getName(m.sender),
+        age: -1,
+        regTime: -1,
+        afk: -1,
+        afkReason: '',
+        banned: false,
+        level: 0,
+        lastweekly: 0,
+        role: 'Warrior V',
+        autolevelup: false,
+        money: 0,
+        pasangan: "",
+      }
+     }
+  let wann = "https://i.ibb.co/7kSnyh8/IMG-20221111-104556.jpg"
+  let cap = `
+❍⃕  「 ${name} 」
+❍⃕  *I N F O - B O T*\n\n${emot} Sistem otomatis (WhatsApp Bot) yang dapat membantu untuk melakukan sesuatu, mencari dan mendapatkan data/informasi hanya melalui WhatsApp.\n\n❍⃕   *N O T E* \n\n${emot} Gunakan bot di private message agar bot merespon dengan cepat, \n\n${emot} Beri jeda yah agar terhindar dari banned😇\n\n*📮 *Note:* _Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada Owner dengan cara ketik .report banh tik tok audio error_
+  `
+let fpayment = {
+  "key": {
+    "remoteJid": "0@s.whatsapp.net",
+    "fromMe": false,
+    "id": "BAE595C600522C9C",
+    "participant": "0@s.whatsapp.net"
+  },
+  "message": {
+    "requestPaymentMessage": {
+      "currencyCodeIso4217": "USD",
+      "amount1000": fsizedoc,
+      "requestFrom": "0@s.whatsapp.net",
+      "noteMessage": {
+        "extendedTextMessage": {
+          "text": "Jaya-Botz"
+        }
+      },
+      "expiryTimestamp": fsizedoc,
+      "amount": {
+        "value": fsizedoc,
+        "offset": fsizedoc,
+        "currencyCode": "USD"
+      }
+    }
+  }
+}
+let fliveLoc = {
+            key: {
+            participant : '0@s.whatsapp.net'},
+            message: { "liveLocationMessage": { "caption": wm,"h": `${bottime}`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
+           }
+               
+let info = fs.readFileSync('./mp3/desah.opus')
+let fliveLoc22 = {
+            key: {
+            participant : '0@s.whatsapp.net'},
+            message: { "liveLocationMessage": { "title": gcname,"h": bottime, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
+           }
+/*let litch = fs.readFileSync('./mp3/Bot.opus')
+let imgloc = 'https://telegra.ph/file/4d4f611baff7d92ec5e81.mp4'*/
+conn.reply(m.chat, `Sedang Memuat....`, m)
+await conn.send2ButtonDoc(m.chat, cap, botdate, 'ALL MENU', '.? all', 'LIST MENU', '.listmenu', ftoko, {
+			contextInfo: {
+				forwardingScore: fsizedoc,
+				externalAdReply: {
+                    body: bottime,
+    containsAutoReply: true,
+    mediaType: 1,
+    mediaUrl: hwaifu.getRandom(), 
+    renderLargerThumbnail: true,
+    showAdAttribution: false,
+    sourceId: '© Jaya-Botz ',
+    sourceType: 'PDF',
+    previewType: 'PDF',
+    sourceUrl: sgc,
+    thumbnail: await(await fetch(wann)).buffer(),
+    thumbnailUrl: sgc,
+    title: 'Jaya-Botz',
+				}
+			}
+})
+await conn.reply(m.chat, info, fvn, { contextInfo: { externalAdReply: { showAdAttribution: false,
+    mediaUrl: syt,
+    mediaType: 1, 
+    description: syt,
+    title: `Jangan Diplay ${name}!!!`,
+    body: `⚠️ 𝐃𝐀𝐍𝐆𝐄𝐑 ⚠️`,
+    thumbnail: await(await fetch("https://telegra.ph/file/c080917609684bf229cd3.jpg")).buffer(),
+    sourceUrl: syt
+  }
+  } }) 
+          }
+/*let Vid = 'https://telegra.ph/file/4d4f611baff7d92ec5e81.mp4'
+await conn.send2ButtonVid(m.chat, pp, cap, botdate, '𝐋𝐢𝐬𝐭𝐌𝐞𝐧𝐮', '.listmenu', '𝐃𝐚𝐬𝐛𝗼𝐚𝐫𝐝', '.db', m, adReply)*/
 
-//tim
-let wib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-    let wibh = moment.tz('Asia/Jakarta').format('HH')
-    let wibm = moment.tz('Asia/Jakarta').format('mm')
-    let wibs = moment.tz('Asia/Jakarta').format('ss')
-    let wit = moment.tz('Asia/Jayapura').format('HH:mm:ss')
-    let wita = moment.tz('Asia/Makassar').format('HH:mm:ss')
-    let wktuwib = `${wibh} H ${wibm} M ${wibs} S`
-   
-    let d = new Date(new Date + 3600000)
-    let locale = 'id'
-    // d.getTimeZoneOffset()
-    // Offset -420 is 18.00
-    // Offsetalldiii0 is  0.00
-    // Offset  420 is  7.00
-    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateString(locale, { weekday: 'long' })
-    let date = d.toLocaleDateString(locale, {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    })
-    
-//==============> Menu nya
-let intro = `⚠️ *Note:* Bot masih dalam pengembangan, jika menemukan bug/fitur error harap dimaklumi\n\n➣ https://vamsesofficial.github.io/web/`
-conn.send3ButtonDoc(m.chat, `\n\n     *『 ɪ ɴ ᴛ ʀ ᴏ ᴄ ᴀ ᴅ ᴜ ᴛ ɪ ᴏ ɴ 』*\n\n`, intro + `\n\n${tag}\n\n`, 'ALL MENU', '.? all', 'LIST MENU', '.tesm', '\nAKU PEDO YGY', 'bilek', m, { contextInfo: { forwardingScore: fsizedoc, externalAdReply: { body: 'Tes', containsAutoReply: true, mediaType: 1, mediaUrl: hwaifu.getRandom(),  renderLargerThumbnail: true, showAdAttribution: true, sourceId: 'Tes', sourceType: 'PDF', previewType: 'PDF', sourceUrl: sgc, thumbnail: fs.readFileSync('./thumbnail.jpg'), thumbnailUrl: sgc, title: 'ɪ ɴ ᴛ ʀ ᴏ ᴄ ᴀ ᴅ ᴜ ᴛ ɪ ᴏ ɴ'}}})
-    } 
-    
-handler.help = ['menu']
-handler.tags = ['main']
-handler.command = /^(menu|help|co)$/i
-handler.register = false
+handler.command = /^(menu|help)$/i
 
 export default handler
 
+function pickRandom(list) {
+     return list[Math.floor(Math.random() * list.length)]
+  }
+
 //----------- FUNCTION -------
 
-function pickRandom(list) {
-  return list[Math.floor(Math.random() * list.length)]
-}
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
@@ -74,16 +151,16 @@ function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
   let res = "Sudah Dini Hari Kok Belum Tidur Kak? 🥱"
   if (time >= 4) {
-    res = "Pagi Lord 🌄"
+    res = "Selamat Pagi"
   }
   if (time >= 10) {
-    res = "Selamat Siang Kak ☀️"
+    res = "Selamat Siang️"
   }
   if (time >= 15) {
-    res = "Selamat Sore Kak 🌇"
+    res = "Selamat Sore"
   }
   if (time >= 18) {
-    res = "Malam Kak 🌙"
+    res = "Selamat Malam"
   }
   return res
 }
@@ -108,4 +185,25 @@ function wish() {
     wishloc = ('Night Rider')
   }
   return wishloc
+}
+
+async function genProfile(conn, m) {
+  let font = await jimp.loadFont('./names.fnt'),
+    mask = await jimp.read('https://i.imgur.com/552kzaW.png'),
+    welcome = await jimp.read(thumbnailUrl.getRandom()),
+    avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')),
+    status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected'
+
+    await avatar.resize(460, 460)
+    await mask.resize(460, 460)
+    await avatar.mask(mask)
+    await welcome.resize(welcome.getWidth(), welcome.getHeight())
+
+    await welcome.print(font, 550, 180, 'Name:')
+    await welcome.print(font, 650, 255, m.pushName.slice(0, 25))
+    await welcome.print(font, 550, 340, 'About:')
+    await welcome.print(font, 650, 415, status)
+    await welcome.print(font, 550, 500, 'Number:')
+    await welcome.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'))
+    return await welcome.composite(avatar, 50, 170).getBufferAsync('image/png')
 }

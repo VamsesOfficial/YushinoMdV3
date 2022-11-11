@@ -41,7 +41,7 @@ let time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
   let wann = "https://i.ibb.co/7kSnyh8/IMG-20221111-104556.jpg"
   let cap = `
 ❍⃕  「 ${name} 」
-❍⃕  *I N F O - B O T*\n\n${emot} Sistem otomatis (WhatsApp Bot) yang dapat membantu untuk melakukan sesuatu, mencari dan mendapatkan data/informasi hanya melalui WhatsApp.\n\n❍⃕   *N O T E* \n\n${emot} Gunakan bot di private message agar bot merespon dengan cepat, \n\n${emot} Beri jeda yah agar terhindar dari banned😇\n\n*⚠️ *Note:* Bot masih dalam pengembangan, jika menemukan bug/fitur error harap dimaklumi\n\n➣ https://vamsesofficial.github.io/web/',
+❍⃕  *I N F O - B O T*\n\n${emot} Sistem otomatis (WhatsApp Bot) yang dapat membantu untuk melakukan sesuatu, mencari dan mendapatkan data/informasi hanya melalui WhatsApp.\n\n❍⃕   *N O T E* \n\n${emot} Gunakan bot di private message agar bot merespon dengan cepat, \n\n${emot} Beri jeda yah agar terhindar dari banned😇\n\n*⚠️ *Note:* Bot masih dalam pengembangan, jika menemukan bug/fitur error harap dimaklumi\n\n➣ https://vamsesofficial.github.io/web/
   `
 let fpayment = {
   "key": {
@@ -79,7 +79,7 @@ let info = fs.readFileSync('./mp3/sad.opus')
 let fliveLoc22 = {
             key: {
             participant : '0@s.whatsapp.net'},
-            message: { "liveLocationMessage": { "title": gcname,"h": bottime, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
+            message: { "liveLocationMessage": { "title": namebot,"h": bottime, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
            }
 /*let litch = fs.readFileSync('./mp3/Bot.opus')
 let imgloc = 'https://telegra.ph/file/4d4f611baff7d92ec5e81.mp4'*/
@@ -105,13 +105,13 @@ await conn.send2ButtonDoc(m.chat, cap, botdate, 'ALL MENU', '.? all', 'LIST MENU
 			}
 })
 await conn.reply(m.chat, info, fvn, { contextInfo: { externalAdReply: { showAdAttribution: false,
-    mediaUrl: syt,
+    mediaUrl: sig,
     mediaType: 1, 
-    description: syt,
+    description: sig,
     title: `Jangan Diplay ${name}!!!`,
     body: `⚠️ 𝐃𝐀𝐍𝐆𝐄𝐑 ⚠️`,
     thumbnail: await(await fetch("https://telegra.ph/file/adeac0c422e4e51acf10f.jpg")).buffer(),
-    sourceUrl: syt
+    sourceUrl: sig
   }
   } }) 
           }

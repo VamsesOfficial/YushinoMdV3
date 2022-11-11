@@ -1,13 +1,40 @@
+import moment from 'moment-timezone'
+let handler = m => m
 
-export async function all(m) {
-if (m.chat.endsWith('broadcast') || m.fromMe || m.isGroup || db.data.settings[this.user.jid].group) return
-   let user = global.db.data.users[m.sender]
-    const cooldown = 86400000
-    if (new Date - user.pc < cooldown) return // setiap 24 jam sekali
-    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-    let name = await conn.getName(who)
-    let caption = `*Hai Kak @${who.split("@")[0]}👋*, ${user.banned ? 'kamu dibanned' : `Ada Yang Bisa *${this.user.name}* Bantu?`}
-`.trim()
-    this.sendButton(m.chat, caption, wm, null, [[user.banned ? 'Pemilik Bot' : 'Menu', user.banned ? '/owner' : '/menu']], m, { mentions: this.parseMention(caption) })
+handler.before = async function (m) {
+
+    if (m.chat.endsWith('broadcast') || m.key.remoteJid.endsWith('broadcast')) return
+    if (m.fromMe) return
+    if (m.isGroup) return
+   // if (db.data.settings.groupOnly) return
+    let user = global.db.data.users[m.sender]
+    let { banned } = db.data.users[m.chat]
+    let username = conn.getName(m.sender) 
+    if (new Date - user.pc < 86400000) return // setiap 24 jam sekali
+ //   await conn.modifyChat(m.chat, 'mute', -Math.floor(new Date / 1e3) * 1e3 - 1e3).catch(console.log)
+    await this.sendButton(m.chat, `
+Hai ${ucapan()} *${username.replace(/@.+/, '')}* 👋
+${banned ? `kamu *terbanned* kak 😕\nSilahkan Hubungi: wa.me/${owner[0]}` : 'Ada yang bisa saya bantu?'}
+`.trim(), wm, null, [['ᴍ ᴇ ɴ ᴜ', '.menu']], m)
     user.pc = new Date * 1
+}
+
+export default handler
+function ucapan() {
+        const hour_now = moment.tz('Asia/Jakarta').format('HH')
+        var ucapanWaktu = 'Pagi kak'
+        if (hour_now >= '03' && hour_now <= '10') {
+          ucapanWaktu = 'Pagi kak'
+        } else if (hour_now >= '10' && hour_now <= '15') {
+          ucapanWaktu = 'Siang kak'
+        } else if (hour_now >= '15' && hour_now <= '17') {
+          ucapanWaktu = 'Sore kak'
+        } else if (hour_now >= '17' && hour_now <= '18') {
+          ucapanWaktu = 'Selamat Petang kak'
+        } else if (hour_now >= '18' && hour_now <= '23') {
+          ucapanWaktu = 'Malam kak'
+        } else {
+          ucapanWaktu = 'Selamat Malam!'
+        }	
+        return ucapanWaktu
 }

@@ -58,7 +58,7 @@ handler.all = async function (m) {
 						mediaUrl: sig,
 						mediaType: "VIDEO",
 						description: "Follow: " + sig,
-						title: "👋 Hay Kak :> " + name,
+						title: "𝐕𝐚𝐦𝐬𝐞𝐬𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥,
 						body: botdate,
 						thumbnailUrl: await (await fetch(pp)).buffer(),
 						sourceUrl: sgc
@@ -80,7 +80,7 @@ handler.all = async function (m) {
 						"requestFrom": "0@s.whatsapp.net",
 						"noteMessage": {
 							"extendedTextMessage": {
-								"text": "👋 Hay Kak :> " + name
+								"text": "𝐕𝐚𝐦𝐬𝐞𝐬𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥
 							}
 						},
 						"expiryTimestamp": fsizedoc,
@@ -145,7 +145,7 @@ handler.all = async function (m) {
 					"title": wm,
 					"h": `Hmm`,
 					'seconds': fsizedoc,
-					'caption': "👋 Hay Kak :> " + name,
+					'caption': "𝐕𝐚𝐦𝐬𝐞𝐬𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥,
 					'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')
 				}
 			}
@@ -156,7 +156,7 @@ handler.all = async function (m) {
 			},
 			message: {
 				"extendedTextMessage": {
-					"text": "👋 Hay Kak :> " + name,
+					"text": "𝐕𝐚𝐦𝐬𝐞𝐬𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥,
 					"title": bottime,
 					'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')
 				}
@@ -168,46 +168,42 @@ handler.all = async function (m) {
 			},
 			message: {
 				"liveLocationMessage": {
-					"caption": "👋 Hay Kak :> " + name,
+					"caption": "𝐕𝐚𝐦𝐬𝐞𝐬𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥,
 					"h": `${bottime}`,
 					'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')
 				}
 			}
 		}
 		global.fliveLoc2 = {
-			key: {
-				participant: '0@s.whatsapp.net'
-			},
-			message: {
-				"liveLocationMessage": {
-					"title": "👋 Hay Kak :> " + name,
-					"h": bottime,
-					'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')
-				}
-			}
-		}
+            key:
+            { fromMe: false,
+            participant: `0@s.whatsapp.net`, ...(m.chat ? 
+            { remoteJid: "status@broadcast" } : {}) },
+            message: { "liveLocationMessage": { "title": gcname,"h": wm, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
+           }
 		global.ftoko = {
-			key: {
-				participant: '0@s.whatsapp.net'
-			},
-			message: {
-				"productMessage": {
-					"product": {
-						"productImage": {
-							"mimetype": "image/jpeg",
-							"jpegThumbnail": fs.readFileSync('./thumbnail.jpg') //Gambarnye
-						},
-						"title": "👋 Hay Kak :> " + name, //Kasih namalu 
-						"description": bottime,
-						"currencyCode": "IDR",
-						"priceAmount1000": fsizedoc,
-						"retailerId": "Ghost",
-						"productImageCount": 1
-					},
-					"businessOwnerJid": `0@s.whatsapp.net`
-				}
-			}
-		}
+            key: {
+                   fromMe: false,
+                   participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "6282127487538@s.whatsapp.net" } : {})
+               },
+               message: {
+                   "productMessage": {
+                       "product": {
+                           "productImage":{
+                               "mimetype": "image/jpeg",
+                               "jpegThumbnail": fs.readFileSync('./thumbnail.jpg') //Gambarnye
+                           },
+                           "title": gcname, //Kasih namalu 
+                           "description": "Simple Bot Esm", 
+                           "currencyCode": "USD",
+                           "priceAmount1000": "20000000",
+                           "retailerId": "Ghost",
+                           "productImageCount": 1
+                       },
+                           "businessOwnerJid": `0@s.whatsapp.net`
+               }
+           }
+       }
 		global.fdocs = {
 			key: {
 				participant: '0@s.whatsapp.net'
@@ -228,7 +224,7 @@ handler.all = async function (m) {
 					groupJid: "17608914335-1625305606@g.us",
 					inviteCode: null,
 					groupName: wm,
-					caption: "👋 Hay Kak :> " + name,
+					caption: "𝐕𝐚𝐦𝐬𝐞𝐬𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥,
 					jpegThumbnail: fs.readFileSync('./thumbnail.jpg')
 				}
 			}
@@ -239,7 +235,7 @@ handler.all = async function (m) {
 			},
 			message: {
 				"videoMessage": {
-					"title": "👋 Hay Kak :> " + name,
+					"title": "𝐕𝐚𝐦𝐬𝐞𝐬𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥,
 					"h": `Hmm`,
 					'seconds': fsizedoc,
 					'gifPlayback': 'true',

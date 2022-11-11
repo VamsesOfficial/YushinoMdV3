@@ -201,42 +201,36 @@ let mpt = clockString(_mpt)
 const sections = [{
 title: `${htki} 𝐌𝐄𝐍𝐔 ${htka}`,
 rows: [
-{title: `${emot} Menfess`, rowId: ".? Menfess", },
-{title: `${emot} Virus`, rowId: ".? virus", },
-{title: `${emot} Logo Maker`, rowId: ".? logomaker", },
-{title: `${emot} Rpg`, rowId: ".? rpg", },
-{title: `${emot} Muslim`, rowId: ".? islami", },
-{title: `${emot} Exp`, rowId: ".? xp", },
-{title: `${emot} Game`, rowId: ".? game", },
-{title: `${emot} Fun`, rowId: ".? fun", },
-{title: `${emot} Kerang`, rowId: ".? kerangajaib", },
-{title: `${emot} Quotes`, rowId: ".? quotes", },
-{title: `${emot} Anime`, rowId: ".? anime", },
-{title: `${emot} Nsfw`, rowId: ".? nsfw", },
-{title: `${emot} Premium`, rowId: ".? premium", },
-{title: `${emot} Anonymous Chats`, rowId: ".? anonymous", },
-{title: `${emot} Al-Quran`, rowId: ".? quran", },
-{title: `${emot} Internet`, rowId: ".? internet", },
-{title: `${emot} Berita`, rowId: ".? berita", },
-{title: `${emot} Downloaders`, rowId: ".? downloader", },
-{title: `${emot} Stikers`, rowId: ".? stiker", },
-{title: `${emot} Nulis`, rowId: ".? nulis", },
-{title: `${emot} Audio`, rowId: ".? audio", },
-{title: `${emot} Sound Menu`, rowId: ".soundmenu", },
-{title: `${emot} Group`, rowId: ".? group", },
-{title: `${emot} Admin`, rowId: ".? admin", },
-{title: `${emot} Database`, rowId: ".? database", },
-{title: `${emot} Tools`, rowId: ".? tools", },
-{title: `${emot} Info`, rowId: ".? info", },
-{title: `${emot} Owner`, rowId: ".? owner", },
-{title: `\n${emot} No Category`, rowId: ".? nocategory", },
+{title: `${emot} Rpg`, rowId: ".? rpg", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀᴍ Mᴇɴᴜ Rᴘɢ"},
+{title: `${emot} Exp`, rowId: ".? xp", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Exᴘ"},
+{title: `${emot} Game`, rowId: ".? game", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Gᴇᴍᴇ"},
+{title: `${emot} Fun`, rowId: ".? fun", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Fᴜɴ"},
+{title: `${emot} Kerang`, rowId: ".? kerangajaib", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Kᴇʀᴀɴɢ"},
+{title: `${emot} Quotes`, rowId: ".? quotes", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Qᴜᴏᴛᴇs"},
+{title: `${emot} Anime`, rowId: ".? anime", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Aɴɪᴍᴇ"},
+{title: `${emot} Nsfw`, rowId: ".? nsfw", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Nsғᴡ"},
+{title: `${emot} Premium`, rowId: ".? premium", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Pʀᴇᴍɪᴜᴍ"},
+{title: `${emot} Anonymous Chats`, rowId: ".? anonymous", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Aɴᴏɴʏᴍᴏᴜs Cʜᴀᴛs"},
+{title: `${emot} Al-Quran`, rowId: ".? quran", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Aʟ-Qᴜʀᴀɴ"},
+{title: `${emot} Internet`, rowId: ".? internet", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Iɴᴛᴇʀɴᴇᴛ"},
+{title: `${emot} Berita`, rowId: ".? berita", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Bᴇʀɪᴛᴀ"},
+{title: `${emot} Downloader`, rowId: ".? downloader", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Dᴏᴡɴʟᴏᴀᴅᴇʀ"},
+{title: `${emot} Stikers`, rowId: ".? stiker", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Sᴛɪᴋᴇʀ"},
+{title: `${emot} Nulis`, rowId: ".? nulis", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Nᴜʟɪs"},
+{title: `${emot} Audio`, rowId: ".? audio", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Aᴜᴅɪᴏ"},
+{title: `${emot} Sound Menu`, rowId: ".soundmenu", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Sᴏᴜɴᴅ"},
+{title: `${emot} Group`, rowId: ".? group", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Gʀᴏᴜᴘ"},
+{title: `${emot} Admin`, rowId: ".? admin", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Aᴅᴍɪɴ"},
+{title: `${emot} Database`, rowId: ".? database", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Dᴀᴛᴀʙᴀsᴇ"},
+{title: `${emot} Tools`, rowId: ".? tools", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Tᴏᴏʟs"},
+{title: `${emot} Info`, rowId: ".? info", description: "Mᴇɴᴀᴍᴘɪʟᴋᴀɴ Mᴇɴᴜ Iɴғᴏ"},
 ]
 },{
 title: `${htki} 𝐈𝐍𝐅𝐎 ${htka}`,
 rows: [
-{title: `${emot} OWNER BOT`, rowId: ".owner", },
+{title: `${emot} OWNER`, rowId: ".? owner", description: `ᴏᴡɴᴇʀ ${namebot} 🤗`},
 {title: `${emot} SCRIPT`, rowId: ".sc", },
-{title: `${emot} SEWA WannBotz-MD`, rowId: ".sewa", },
+{title: `${emot} SEWA BOT `, rowId: ".sewa", description: "Mau Nyewa?"},
 {title: `${emot} BUY PREMIUM`, rowId: ".premium", },
 {title: `${emot} DONASI`, rowId: ".donasi", },
 {title: `${emot} RULES`, rowId: ".rules", },
@@ -567,7 +561,7 @@ thumbnail: await(await fetch(thumb2)).buffer(),
            }
     
 //------------------ DOCUMENT
-await conn.send3ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/adeac0c422e4e51acf10f.jpg')).buffer(), cap1, text.trim(), 'OWNER', '.owner', 'SEWA BOT', '.sewa', 'S & K', '.rules',  m, {
+await conn.send3ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/59240299fd00d5477fdc5.jpg')).buffer(), cap1, text.trim(), 'OWNER', '.owner', 'SEWA BOT', '.sewa', 'DONASI', '.donasi',  m, {
       quoted: fliveLoc,  
       contextInfo: { //forwardingScore: 99999, isForwarded: true,  
           externalAdReply: {  showAdAttribution: false,       mediaUrl: sig,
@@ -575,7 +569,7 @@ await conn.send3ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/
               body: bottime,
               description: sig,
               mediaType: 1,  
-            thumbnail: await (await fetch('https://telegra.ph/file/adeac0c422e4e51acf10f.jpg)).buffer(),
+            thumbnail: await (await fetch('https://telegra.ph/file/59240299fd00d5477fdc5.jpg')).buffer(),
            sourceUrl: sig
           }  
        }  

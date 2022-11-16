@@ -5,14 +5,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (res.status != 200) throw res.message;
     if (!res) throw res.message;
     
-    let result = `⟐⟞⟚⟝⟮ *Title:* ⟯⟞⟚⟝⟐
-┇⟣⟪ ${res.title} ⟫⟢
-▥ ━┉┄┄┈┈ ▢
+    let result = `
+*DOWNLOADER BY CHONOX*
 
-┇⟐⟞⟚⟝⟮ *Author* ⟯⟞⟚⟝⟐
-▥ ━┉┄┄┈┈ ▢
-${res.author}
-◈ ━┉┈┄┈┈ ►`
+*Title:* ${res.title}
+*Author:* ${res.author}`
     conn.sendButtonVid(m.chat, res.video, result, '_© 𝗩𝗮𝗺𝘀𝗲𝘀_', `THANKS GANTENG`, `.iya`, m)
 }
 handler.help = ['tiktok'].map(v => v + ' <url>')
